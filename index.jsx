@@ -44,3 +44,8 @@ const h1 = document.createElement("h1")
 const textContent = "This is an imperative way to program";
 const className = header;
 document.getElementById("root").append(h1)
+
+//using react
+ReactDom.render(
+  <h1 className="header">This is a declarative way to program</h1>,
+  document.getElementById("root"))
