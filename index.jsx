@@ -49,3 +49,15 @@ document.getElementById("root").append(h1)
 ReactDom.render(
   <h1 className="header">This is a declarative way to program</h1>,
   document.getElementById("root"))
+
+//Introducing JSX
+const h1 = document.createElement("h1")
+const className = header;
+const textContent ="This is an imperative way to program";
+document.getElementById("root").append(h1)
+console.log(h1);
+
+//JSX allows us to write declarative program
+const element = <h1 class="header">This is JSX</h1>
+console.log(element);
+ReactDOM.render(element, document.getElementById("root"))
