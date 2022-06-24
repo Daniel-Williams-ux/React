@@ -61,3 +61,12 @@ console.log(h1);
 const element = <h1 class="header">This is JSX</h1>
 console.log(element);
 ReactDOM.render(element, document.getElementById("root"))
+
+//In react you can not render two siblings side by side except you put them in a div/parent element
+ReactDOM.render(
+    <div>
+        <h1 className="header">This is JSX</h1>
+        <p>This is a paragraph</p>
+    </div>,
+    document.getElementById("root")
+)
