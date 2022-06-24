@@ -70,3 +70,29 @@ ReactDOM.render(
     </div>,
     document.getElementById("root")
 )
+
+
+//just like the h1, div can given a variable
+const page = (
+    <div>
+        <h1 className="header">This is JSX</h1>
+        <p>This is a paragraph</p>
+    </div>
+)
+
+console.log(page)// it behaves like an JS object
+{
+  type: "div", 
+    props:{
+        children: [{type: "h1",
+                    props: {
+                      className: "header", children: "This is JSX"
+           }, 
+                    props: {
+                      children: "This is a paragraph"
+                    }],
+    }
+
+ReactDOM.render(
+    page,
+    document.getElementById("root")
