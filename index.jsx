@@ -155,3 +155,30 @@ document.getElementById("root").append(page) //=>[object Object]
 document.getElementById("root").append(JSON.strigify(page))//=> object view
 
 //This shows that JSX returns JS objects. It's the ReactDOM that interpretes it.
+
+
+
+/**
+: fix our code!
+
+Don't forget, you're not using CDNs anymore, so there's no
+global "ReactDOM" variable to use anymore.
+ */
+import React from "react"
+import ReactDOM from "react-dom"
+
+const page = (
+    <div>
+        <h1>My awesome website in React</h1>
+        <h3>Reasons I love React</h3>
+        <ol>
+            <li>It's composable</li>
+            <li>It's declarative</li>
+            <li>It's a hireable skill</li>
+            <li>It's actively maintained by skilled people</li>
+        </ol>
+    </div>
+)
+
+ReactDOM.render(page, document.getElementById("root"))
+// document.getElementById("root").append(JSON.stringify(page))
