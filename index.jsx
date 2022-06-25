@@ -414,7 +414,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import MainContent from "./MainContent"
   
-function Page() { //parent component
+function App() { //parent component
     return (
         <div>
             <Header /> /*child component*/
@@ -424,4 +424,5 @@ function Page() { //parent component
     )
 }
 
-ReactDOM.render(<Page />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"))
+//App page can still have it's owm component file but becos it's a small project we will leave it the way it is.
