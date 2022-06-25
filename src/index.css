@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.nav-logo {
+    width: 60px;
+}
+
 .nav-items {
     list-style: none;
     display: flex;
