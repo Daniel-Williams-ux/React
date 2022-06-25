@@ -231,3 +231,34 @@ function TemporaryName() { //pascal case instead of carmal
 }
 
 ReactDOM.render(<TemporaryName />, document.getElementById("root"))
+
+
+/**
+Challenge: 
+
+Part 1: Create a page of your own using a custom Page component
+
+It should return an ordered list with the reasons why you're
+excited to be learning React :)
+
+Render your list to the page
+
+ */
+import React from "react"
+import ReactDom from "react-dom"
+
+function Reasons() {
+    return (
+    <div>
+        <ol>
+           <li>It's dynamic</li>
+           <li>It's composable</li>
+           <li>It's highly demanded</li>
+        </ol>
+    </div>
+    )
+} 
+ReactDom.render(
+    <Reasons/>,
+    document.getElementById("root")
+)
