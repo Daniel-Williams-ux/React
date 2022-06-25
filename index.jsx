@@ -264,7 +264,7 @@ ReactDom.render(
 )
 
 
-/**
+/*
 Challenge: 
 
 Part 2: 
