@@ -249,13 +249,12 @@ import ReactDom from "react-dom"
 
 function Reasons() {
     return (
-    <div>
+ 
         <ol>
            <li>It's dynamic</li>
            <li>It's composable</li>
            <li>It's highly demanded</li>
         </ol>
-    </div>
     )
 } 
 ReactDom.render(
@@ -304,3 +303,4 @@ function Page() {
 }
 
 ReactDOM.render(<Page />, document.getElementById("root"))
+  
