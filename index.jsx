@@ -355,7 +355,7 @@ function Header() {
     return (
         <header>
             <nav>
-                <img src="./react-logo.png" width="40px" />
+                <img src="./react-logo.png" class="nav-logo" />
             </nav>
         </header>
     )
