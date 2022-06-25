@@ -420,7 +420,7 @@ function Header() {
         <header>
             <nav>
                 <img src="./react-logo.png" width="40px" />
-              <ul>
+              <ul  className="nav-items">
                     <li>Pricing</li>
                     <li>About</li>
                     <li>Contact</li>
