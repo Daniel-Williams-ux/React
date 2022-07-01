@@ -426,3 +426,98 @@ function App() { //parent component
 
 ReactDOM.render(<App />, document.getElementById("root"))
 //App page can still have it's owm component file but becos it's a small project we will leave it the way it is.
+
+
+//JS inside JSX
+import React from "react"
+import ReactDOM from "react-dom"
+
+function App() {
+    const firstName = "Joe"
+    const lastName = "Schmoe"
+    /**
+     * Challenge: finish off the h1 below so it says
+     * "Hello Joe Schmoe!"
+     */
+    return (
+        <h1>Hello {firstName} {lastName}!</h1>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+//console
+Hello Joe Schmoe!
+  
+  
+//Apart from puling variables, JS can also be run directly
+  import React from "react"
+import ReactDOM from "react-dom"
+
+function App() {
+    const date = new Date()
+    
+    return (
+        <h1>It is currently about {date.getHours() % 12} o!</h1>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+//Same
+mport React from "react"
+import ReactDOM from "react-dom"
+
+function App() {
+    
+    return (
+        <h1>It is currently about {new Date().getHours() % 12} o'clock!</h1> 
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+/*because anything put inside the curly brace will be run as regular JS*/
+
+
+//It's more readable to do the normal JS
+import React from "react"
+import ReactDOM from "react-dom"
+
+function App() {
+    const date = new Date()
+    const hours = date.getHours() % 12
+    
+    return (
+        <h1>It is currently about {hours} o'clock!</h1>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+//More exampes
+import React from "react"
+import ReactDOM from "react-dom"
+
+function App() {
+    const date = new Date()
+    const hours = date.getHours()
+    let timeOfDay
+    
+    if (hours < 12) {
+        timeOfDay = "morning"
+    } else if (hours >= 12 && hours < 17) {
+        timeOfDay = "afternoon"
+    } else {
+        timeOfDay = "night"
+    }
+    
+    /**
+     * Challenge: fix the h1 below to use the timeOfDay
+     * string we determined in the code above
+     */
+    
+    return (
+        <h1>Good {timeOfDay}!</h1>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
