@@ -101,3 +101,80 @@ function Navbar(props) {
 /*
 5. What data type is `props` when the component receives it?
 An object!*/
+
+
+
+//Destructuring props
+import React from "react"
+
+export default function Contact(props) {
+    return (
+        <div className="contact-card">
+            <img src={props.img}/>
+            <h3>{props.name}</h3>
+            <div className="info-group">
+                <img src="./images/phone-icon.png" />
+                <p>{props.phone}</p>
+            </div>
+            <div className="info-group">
+                <img src="./images/mail-icon.png" />
+                <p>{props.email}</p>
+            </div>
+        </div>
+    )
+}
+
+const person = {
+    img: "./images/mr-whiskerson.png",
+    name: "Mr. Whiskerson",
+    phone: "(800) 555-1234",
+    email: "mr.whiskaz@catnap.meow"
+}
+
+const {img, name} = person
+console.log(name)
+
+//OR
+import React from "react"
+
+// Challenge: fix the bug, now that we've destructured the props object
+export default function Contact({img, name, phone, email}) {
+    return (
+        <div className="contact-card">
+            <img src={img}/>
+            <h3>{name}</h3>
+            <div className="info-group">
+                <img src="./images/phone-icon.png" />
+                <p>{phone}</p>
+            </div>
+            <div className="info-group">
+                <img src="./images/mail-icon.png" />
+                <p>{email}</p>
+            </div>
+        </div>
+    )
+}
+
+
+/* Challenge:
+One LAST time in this course, set up a React app from scratch
+- Render an <App /> component
+    - App should be in its own file
+- App should render 4-5 <Joke /> components 
+  (Joke component defined in its own file too)
+    - Each Joke should receive a "setup" prop and a "punchline" prop
+      and render those however you'd like
+- Use your favorite 2-part jokes (setup & punchline), or check
+  jokes.md file for some examples.
+
+
+
+EXTRA CREDIT:
+Some jokes are only a punchline with no setup:
+
+E.g.: "It’s hard to explain puns to kleptomaniacs because 
+they always take things literally."
+
+If you don't pass in a "question" prop, how might you make it only 
+show the punchline?
+*/
