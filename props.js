@@ -178,3 +178,186 @@ they always take things literally."
 If you don't pass in a "question" prop, how might you make it only 
 show the punchline?
 */
+
+
+
+
+//index.html
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+
+
+//APP.CSS
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+}
+
+//APP.JSX
+import React from "react"
+import Joke from "./Joke"
+
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+            />
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." 
+            />
+            <Joke 
+                setup="How did the hacker escape the police?" 
+                punchline="He just ransomware!" 
+            />
+            <Joke 
+                setup="Why don't pirates travel on mountain roads?" 
+                punchline="Scurvy." 
+            />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?" 
+                punchline="Swarm." 
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?" 
+                punchline="I don't know, but the flag is a big plus!" 
+            />
+        </div>
+    )
+}
+
+//joke.jsx
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            <h3>{props.setup}</h3>
+            <p>{props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+
+
+
+//maim.jsx
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+
+//We can always play around with it using vanilla JavaScript
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>} 
+        /*The curly braces are rendering i to JS syntax and it reads ; if props.setup is a truthy value then render <h3>...*/
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+
+
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            <h3 style={{display: props.setup ? "block" : "none"}}>Setup: {props.setup}</h3>
+/*using tenary set up to style: if props.setup display block else display none*/
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+
+
+
+/*
+Challenge: Think critically - how would you pass in a prop that wasn't
+a string datatype.
+
+E.g. Say you want each Joke component to receive an "upvotes" and "downvotes"
+prop that is a number, as well as a prop with an array of comments, and a boolean
+of whether the joke is a pun (`isPun`).
+*/
+
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+                isPun={true}
+                upvotes={10}
+                downvotes={2}
+                comments={[{author: "", body: "", title: ""}]}
+            />
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." 
+                isPun={false}
+            />
+            <Joke 
+                setup="How did the hacker escape the police?" 
+                punchline="He just ransomware!"
+                isPun={true}
+            />
+            <Joke 
+                setup="Why don't pirates travel on mountain roads?" 
+                punchline="Scurvy." 
+                isPun={true}
+            />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?" 
+                punchline="Swarm." 
+                isPun={true}
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?" 
+                punchline="I don't know, but the flag is a big plus!" 
+                isPun={false}
+            />
+        </div>
+    )
+}
+//Jokes.jsx
+import React from "react"
+
+export default function Joke(props) {
+    console.log(props.isPun)
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}
+            <p>Punchline: {props.punchline}</p>
+            <hr />
+        </div>
+    )
+}
+//CONSOLE
+›true
+›false
+›true
+›true
+›true
+›false
