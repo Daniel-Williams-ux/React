@@ -1,0 +1,2 @@
+"Props" refer to the properties being passed into a component in order for it to work correctly, similarly to how a function receives parameters.
+A component receiving props is not allowed to modify those props.(i.e. they are "immutable.")
