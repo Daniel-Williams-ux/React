@@ -32,9 +32,10 @@ class MyComponent extends React.Component {
     // Change code below this line
 return (
 <div> 
-<p>return me</p>
+<h1>Hello React!</h1>
 </div>
 );
+
     // Change code above this line
   }
 };
